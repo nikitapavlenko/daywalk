@@ -4,7 +4,7 @@ angular.module('daywalk.home', ['ngRoute'])
 
 .config(function($routeProvider) {
 	$routeProvider.when('/', {
-		templateUrl: 'app/browser/constructor.html',
+		templateUrl: 'app/home/home.html',
 		controller: 'HomeController'
 	});
 })

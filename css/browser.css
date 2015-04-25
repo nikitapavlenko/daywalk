@@ -1,4 +1,52 @@
 /* Google branding deleting stuff */
+/*a[href^="http://maps.google.com/maps"]{display:none !important}*/
+/*.gmnoprint a, .gmnoprint span {*/
+    /*display:none;*/
+/*}*/
+/*.gmnoprint div {*/
+    /*background:none !important;*/
+/*}*/
+
+ /*Main content*/
+/*#dropdown-button, #point-info {*/
+    /*z-index: 100 !important;*/
+    /*position: absolute !important;*/
+    /*margin-top: 2%;*/
+    /*margin-right: 2%;*/
+    /*right: 0;*/
+/*}*/
+
+/*.control-button {*/
+    /*position: absolute !important;*/
+    /*z-index: 1001 !important;*/
+    /*bottom: 10px;*/
+/*}*/
+
+/*#previousPointButton {*/
+    /*left: 45%;*/
+/*}*/
+
+/*#nextPointButton {*/
+    /*left: 55%;*/
+/*}*/
+
+/*.map-element {*/
+    /*width: 50%;*/
+    /*height: 100%;*/
+    /*float: left;*/
+    /*z-index: 9;*/
+    /*position: inherit !important;*/
+    /*transform: inherit !important;*/
+/*}*/
+/*.show-me-small{*/
+    /*width:10%;*/
+    /*height:20%;*/
+    /*z-index: 100 !important;*/
+    /*position: absolute !important;*/
+/*}*/
+
+
+/* Google branding deleting stuff */
 a[href^="http://maps.google.com/maps"]{display:none !important}
 .gmnoprint a, .gmnoprint span {
     display:none;
@@ -14,6 +62,20 @@ a[href^="http://maps.google.com/maps"]{display:none !important}
     margin-top: 2%;
     margin-right: 2%;
     right: 0;
+}
+
+.control-button {
+position: absolute !important;
+z-index: 1001 !important;
+bottom: 10px;
+}
+
+#previousPointButton {
+    left: 45%;
+}
+
+#nextPointButton {
+    left: 55%;
 }
 
 .map-element {

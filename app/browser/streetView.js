@@ -1,3 +1,6 @@
+var map;
+var panorama;
+
 function createPanorama(viewElement, map, angle) {
     var panoramaOptions = {
         position: map.getCenter(),
@@ -9,44 +12,50 @@ function createPanorama(viewElement, map, angle) {
             pitch: 10
         }
     };
-    var panorama = new google.maps.StreetViewPanorama(viewElement, panoramaOptions);
+    panorama = new google.maps.StreetViewPanorama(viewElement, panoramaOptions);
     map.setStreetView(panorama);
 }
 
+function moveToPoint(point) {
+    var newPoint = new google.maps.LatLng(point.latitude, point.longitude)
+    map.setCenter(newPoint);
+    panorama.setPosition(newPoint);
+}
 
-function initializeViews(res) {
+
+function initializeViews(res, pointIndex) {
     var markers = res["points"];
     /*var markers = [
-            {
-                "title": 'Alibaug',
-                "lat": '49.989727',
-                "lng": '36.233556',
-                "description": '1'
-            }
-        ,
-            {
-                "title": 'Mumbai',
-                "lat": '49.989786',
-                "lng": '36.23319',
-                "description": '2'
-            }
-        ,
-            {
-                "title": 'Pune',
-                "lat": '49.993149',
-                "lng": '36.233553',
-                "description": '3'
-            }
-    ];*/
+     {
+     "title": 'Alibaug',
+     "lat": '49.989727',
+     "lng": '36.233556',
+     "description": '1'
+     }
+     ,
+     {
+     "title": 'Mumbai',
+     "lat": '49.989786',
+     "lng": '36.23319',
+     "description": '2'
+     }
+     ,
+     {
+     "title": 'Pune',
+     "lat": '49.993149',
+     "lng": '36.233553',
+     "description": '3'
+     }
+     ];*/
     var mapOptions = {
-            center: new google.maps.LatLng(markers[0].latitude, markers[0].longitude),
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI: true,
-            minZoom: 14
-        };
+        center: new google.maps.LatLng(markers[0].latitude, markers[0].longitude),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        minZoom: 14
+    };
 
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var infoWindow = new google.maps.InfoWindow();
     var lat_lng = new Array();
     var latlngbounds = new google.maps.LatLngBounds();
@@ -123,20 +132,20 @@ function initializeViews(res) {
         $( "#map" ).animate({
             height: height,
             width: width
-          },{
-                duration: 100,
-                step: function(  ){
-                   google.maps.event.trigger(map,'resize');
-                   map.setZoom(15);      // This will trigger a zoom_changed on the map
-                   map.setCenter(new google.maps.LatLng(markers[0].latitude, markers[0].longitude));
-                },
-                complete: function() {
-                    google.maps.event.trigger(map,'resize');
-                    map.setZoom(15);      // This will trigger a zoom_changed on the map
-                    map.setCenter(new google.maps.LatLng(markers[0].latitude, markers[0].longitude));
-                    isResising = false;
-                }
-            });
+        },{
+            duration: 100,
+            step: function(  ){
+                google.maps.event.trigger(map,'resize');
+                map.setZoom(15);      // This will trigger a zoom_changed on the map
+                map.setCenter(new google.maps.LatLng(markers[0].latitude, markers[0].longitude));
+            },
+            complete: function() {
+                google.maps.event.trigger(map,'resize');
+                map.setZoom(15);      // This will trigger a zoom_changed on the map
+                map.setCenter(new google.maps.LatLng(markers[0].latitude, markers[0].longitude));
+                isResising = false;
+            }
+        });
     }
 
     var panorama = createPanorama(document.getElementById('panorama'), map, 150);

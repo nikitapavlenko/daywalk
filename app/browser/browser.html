@@ -1,4 +1,6 @@
-<button id="dropdown-button" class="dropdown-button btn" data-activates="point-info"></button>
+<button id="dropdown-button" class="dropdown-button btn" data-activates="point-info">
+    <i class="large mdi-action-list"></i>
+</button>
 
 <!-- Dropdown Structure -->
 <div id="point-info" class='dropdown-content'>
@@ -7,10 +9,19 @@
 
 </div>
 
-<button id="nextPointButton" class="btn control-button" ng-click="next()">Next</button>
-<button id="previousPointButton" class="btn control-button" ng-click="previous()">Previous</button>
+<div>
+    <button id="nextPointButton" class="btn control-button" ng-click="next()">
+        <i class="large mdi-hardware-keyboard-arrow-right"></i>
+    </button>
+    <button id="previousPointButton" class="btn control-button" ng-click="previous()">
+        <i class="large mdi-hardware-keyboard-arrow-left"></i>
+    </button>
+</div>
 
-<div id="map" class="show-me-small"></div>
+<div class="col s12 m2" >
+    <div id="map" class="show-me-small z-depth-3"></div>
+</div>
+
 <div id="panorama" class="map-element"></div>
 
 <link rel="stylesheet" href="browser.css">

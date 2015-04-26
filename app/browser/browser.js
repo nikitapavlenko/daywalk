@@ -17,6 +17,10 @@ angular.module('daywalk.browser', ['ngRoute'])
         console.log(res);
         $scope.route = res;
 
+        for(var i = 0; i < $scope.route.points.length; i++){
+            $scope.route.points[i].videoUrl += '?enablejsapi=1';
+        }
+
         initializeViews(res);
 
         $scope.next = function() {

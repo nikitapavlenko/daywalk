@@ -8,6 +8,7 @@ angular.module('daywalk', [
 	$sceDelegateProvider.resourceUrlWhitelist([
     	'self',
     	'http://nn.radio-t.com/rtfiles/**',
-		'http://youtube.com/**'
+		'http://youtube.com/**',
+		'https://www.youtube.com/**'
 	]);
 }]);

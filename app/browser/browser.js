@@ -10,8 +10,8 @@ angular.module('daywalk.browser', ['ngRoute'])
     })
 
     .controller('BrowserController', ['$scope', 'Route', function($scope, route) {
-
         $scope.currentPosition = 0;
+        $scope.isPlaying = false;
 
         var res = route.get();
         console.log(res);
@@ -35,5 +35,15 @@ angular.module('daywalk.browser', ['ngRoute'])
                 $scope.currentPosition = $scope.route.points.length - 1;
             }
             moveToPoint($scope.route.points[$scope.currentPosition]);
+        }
+
+        $scope.toggleAudio = function () {
+            var player = document.getElementById('player');
+            if($scope.isPlaying){
+                player.pause();
+            } else {
+                player.play();
+            }
+            $scope.isPlaying = !$scope.isPlaying;
         }
     }]);

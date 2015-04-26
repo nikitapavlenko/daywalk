@@ -16,6 +16,11 @@ a[href^="http://maps.google.com/maps"]{display:none !important}
     right: 0;
 }
 
+#point-info {
+    height: 80%;
+    width: 300px;
+}
+
 .control-button {
 position: absolute !important;
 z-index: 1001 !important;
@@ -51,4 +56,12 @@ bottom: 10px;
 
 .modal-content {
     overflow-y: hidden !important;
+}
+
+#play-button {
+    right: 45%;
+}
+
+#pause-button {
+    right: 55%;
 }

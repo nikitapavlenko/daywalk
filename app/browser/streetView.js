@@ -9,7 +9,7 @@ function createPanorama(viewElement, map, angle) {
         clickToGo: false,
         pov: {
             heading: angle,
-            pitch: 10
+            pitch: 0
         }
     };
     panorama = new google.maps.StreetViewPanorama(viewElement, panoramaOptions);
@@ -20,33 +20,13 @@ function moveToPoint(point) {
     var newPoint = new google.maps.LatLng(point.latitude, point.longitude)
     map.setCenter(newPoint);
     panorama.setPosition(newPoint);
+    panorama.setPov({heading: point.angle,
+            pitch: 0});
 }
 
 
 function initializeViews(res, pointIndex) {
     var markers = res["points"];
-    /*var markers = [
-     {
-     "title": 'Alibaug',
-     "lat": '49.989727',
-     "lng": '36.233556',
-     "description": '1'
-     }
-     ,
-     {
-     "title": 'Mumbai',
-     "lat": '49.989786',
-     "lng": '36.23319',
-     "description": '2'
-     }
-     ,
-     {
-     "title": 'Pune',
-     "lat": '49.993149',
-     "lng": '36.233553',
-     "description": '3'
-     }
-     ];*/
     var mapOptions = {
         center: new google.maps.LatLng(markers[0].latitude, markers[0].longitude),
         zoom: 15,

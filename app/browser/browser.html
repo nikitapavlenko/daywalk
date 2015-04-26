@@ -1,64 +1,65 @@
 <button id="dropdown-button" class="dropdown-button btn" data-activates="point-info">
-    <i class="large mdi-action-list"></i>
+<i class="large mdi-action-list"></i>
 </button>
-
 <!-- Dropdown Structure -->
 <div id="point-info" class='dropdown-content'>
-    {{title}}<br/>
-    {{description}}<br/>
-  <!-- Modal Trigger -->
- <button data-target="video-modal" class="btn modal-trigger">Modal</button>
+    <!-- Modal Trigger -->
+    <!-- Modal Structure -->
+
+    <audio id="player" ng-src="{{route.points[currentPosition].musicUrl}}"></audio><br/>
+    <button class="btn control-button" onclick="document.getElementById('player').play()">Play</button><br/>
+    <!-- <button class="btn control-button" onclick="document.getElementById('player').pause()">Pause</button><br/> -->
+    <p class="volume-control">
+        <input id="volume-control" type="range" id="test5" min="0" max="1" step="0.1"
+        onchange="document.getElementById('player').volume = document.getElementById('volume-control').value" />
+    </p>
+    <button data-target="video-modal" class="btn modal-trigger">Video</button>
 </div>
-  <!-- Modal Structure -->
-<div id="video-modal" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4>{{route.points[currentPosition].title}}</h4>
-  <div id="video-div">
-    <iframe width="560" height="315" ng-src="{{route.points[currentPosition].videoUrl}}" frameborder="0"allowfullscreen></iframe>
-  </div>
-  </div>
-</div>
+
+    <div id="video-modal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>{{route.points[currentPosition].title}}</h4>
+            <div id="video-div">
+                <iframe width="560" height="315" ng-src="{{route.points[currentPosition].videoUrl}}" frameborder="0"allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
 <div>
     <button id="nextPointButton" class="btn control-button" ng-click="next()">
-        <i class="large mdi-hardware-keyboard-arrow-right"></i>
+    <i class="large mdi-hardware-keyboard-arrow-right"></i>
     </button>
     <button id="previousPointButton" class="btn control-button" ng-click="previous()">
-        <i class="large mdi-hardware-keyboard-arrow-left"></i>
+    <i class="large mdi-hardware-keyboard-arrow-left"></i>
     </button>
 </div>
-
 <div class="col s12 m2" >
     <div id="map" class="show-me-small z-depth-3"></div>
 </div>
-
 <div id="panorama" class="map-element"></div>
-
 <link rel="stylesheet" href="browser.css">
-
 <script>
-     $(document).ready(function(){
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-        $('.modal-trigger').leanModal();
-      });
-
-    $('.dropdown-button').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                gutter: 0, // Spacing from edge
-                belowOrigin: true // Displays dropdown below the button
-            }
-    );
+$(document).ready(function() {
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+});
+$('.dropdown-button').dropdown({
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    gutter: 0, // Spacing from edge
+    belowOrigin: true // Displays dropdown below the button
+});
 $('.modal-trigger').leanModal({
     ready: function() {
         toggleVideo();
     },
-    complete: function(){
+    complete: function() {
         console.log('Hidden!!!');
         toggleVideo('hide');
     }
 });
+
 function toggleVideo(state) {
     // if state == 'hide', hide. Else: show video
     var div = document.getElementById("video-div");

@@ -47,3 +47,28 @@ angular.module('daywalk.browser', ['ngRoute'])
             $scope.isPlaying = !$scope.isPlaying;
         }
     }]);
+
+    // .controller('BrowserController', ['$scope', 'routesService', function($scope, route) {
+
+    //     $scope.currentPosition = 0;
+
+    //     var res = route.query(function(){
+    //         initializeViews(res);
+    //         $scope.route = res;
+    //         console.log(res);
+    //     });
+
+    //     $scope.next = function() {
+    //         $scope.currentPosition++;
+    //         $scope.currentPosition %= $scope.route.points.length;
+    //         moveToPoint($scope.route.points[$scope.currentPosition]);
+    //     }
+
+    //     $scope.previous = function() {
+    //         $scope.currentPosition--;
+    //         if ($scope.currentPosition < 0) {
+    //             $scope.currentPosition = $scope.route.points.length - 1;
+    //         }
+    //         moveToPoint($scope.route.points[$scope.currentPosition]);
+    //     }
+    // }]);

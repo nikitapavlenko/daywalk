@@ -12,37 +12,48 @@ resources.factory('Route', function($resource) {
 			points: [
 				{
 					id: 0,
+					latitude: "49.992293",
+					longitude: "36.231365",
+					angle: 280.65,
+					routeId: 12,
+					sequenceNumber: 2,
+					title: "Летящая Украина",
+					info: "памятник, установленный в Харькове на площади Конституции в честь провозглашения Независимости Украины 24 августа 1991 года. Был торжественно открыт 22 августа 2012 года накануне 21-й годовщины Независимости государства и Дня города (в Харькове отмечается 23 августа).",
+					musicUrl: "musicUrl1",
+					videoUrl: "https://www.youtube.com/watch?v=48bIZoOQS2I",
+				},{
+					id: 1,
+					latitude: "49.998811",
+					longitude: "36.233934",
+					angle: 290.32,
+					routeId: 12,
+					sequenceNumber: 3,
+					title: "ХНАТОБ",
+					info: "Харьковский национальный академический театр оперы и балета имени Н.В. Лысенко (ХНАТОБ) — первый украинский стационарный оперный театр. Ставит спектакли на украинском, русском, французском и итальянском языках.",
+					musicUrl: "musicUrl3",
+					videoUrl: "https://www.youtube.com/embed/BqjaNVrv7H4",
+				},{
+					id: 2,
 					latitude: "50.000943",
 					longitude: "36.234657",
 					angle: 278.3,
 					routeId: 12,
 					sequenceNumber: 1,
-					title: "Title pont 1",
-					info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit totam officia, voluptas quidem cupiditate doloremque. Accusamus ducimus laborum laudantium.",
+					title: "Памятник Тарасу Григорьевичу Шевченко",
+					info: "Памятник украинскому поэту, писателю, художнику и мыслителю Тарасу Григорьевичу Шевченко. Монумент был торжественно открыт 24 марта 1935 года, то есть через 9 месяцев после того, как Харьков перестал быть столицей УССР.",
 					musicUrl: "http://nn.radio-t.com/rtfiles/rt_podcast441.mp3",
-					videoUrl: "https://www.youtube.com/embed/2YCVdB-jFQE",
+					videoUrl: "",
 				},{
-					id: 1,
-					latitude: "49.989786",
-					longitude: "36.23319",
-					angle: 60.4,
+					id: 3,
+					latitude: "50.004295",
+					longitude: "36.235793",
+					angle: 282.73,
 					routeId: 12,
-					sequenceNumber: 2,
-					title: "Title pont 2",
-					info: "info point two",
-					musicUrl: "musicUrl1",
-					videoUrl: "https://www.youtube.com/embed/1YELuJU9JV0",
-				},{
-					id: 2,
-					latitude: "49.993149",
-					longitude: "36.233553",
-					angle: 180.4,
-					routeId: 12,
-					sequenceNumber: 3,
-					title: "Title pont 3",
-					info: "info point three",
-					musicUrl: "musicUrl3",
-					videoUrl: "https://www.youtube.com/embed/2YCVdB-jFQE",
+					sequenceNumber: 1,
+					title: "Площадь Свободы",
+					info: "Пло?щадь Свобо?ды (укр. Площа Свободи) — центральная площадь Харькова,  шестая по величине площадь в Европе и двенадцатая в мире. ",
+					musicUrl: "http://nn.radio-t.com/rtfiles/rt_podcast441.mp3",
+					videoUrl: "https://www.youtube.com/embed/fazoIhhCcGw",
 				}
 			]
   		};
@@ -50,5 +61,6 @@ resources.factory('Route', function($resource) {
   }
 })
 
-
-//http://daywalk-backend.herokuapp.com/rest/routes
+.factory('routesService', ['$resource', function($resource) {
+return $resource('http://daywalk-backend.herokuapp.com/rest/routes/');
+}]);

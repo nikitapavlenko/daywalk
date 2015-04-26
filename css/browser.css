@@ -54,6 +54,7 @@ bottom: 10px;
 
 #video-modal {
     position: absolute;
+    overflow-y:hidden;
 }
 
 .modal-content {

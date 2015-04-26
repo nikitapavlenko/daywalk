@@ -1,19 +1,12 @@
-/* --------------------------------------
-=========================================
-RESPONSIVE FIXES
-=========================================
------------------------------------------*/
-
 @media (max-width: 1024px) {
       header {
         background-attachment: scroll;
     }
 }
- 
 
  @media (max-width: 991px) {
- 
-    
+
+
     body {
         font-size: 15px;
         line-height: 26px;
@@ -34,8 +27,8 @@ RESPONSIVE FIXES
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
- 
-    
+
+
     html {
         font-size: 90%;
     }
@@ -53,11 +46,11 @@ RESPONSIVE FIXES
     .sticky-navigation .navbar-header a {
         float: none !important;
     }
-    
+
     .sticky-navigation .navbar-header img {
         max-height: 40px;
     }
-    
+
     .sticky-navigation .main-navigation {
         text-align: center;
         width: 100%;
@@ -80,8 +73,8 @@ RESPONSIVE FIXES
 }
 
 @media (max-width: 767px) {
- 
-    
+
+
     html {
         font-size: 80%;
     }
@@ -98,7 +91,7 @@ RESPONSIVE FIXES
     header .only-logo .navbar {
         padding: 20px;
     }
-    
+
     .navbar-inverse .navbar-nav {
         padding-left: 10px;
         line-height: normal;
@@ -134,7 +127,7 @@ RESPONSIVE FIXES
     .features .feature .icon-container .icon {
         margin: auto;
     }
-    
+
     .download .subscription-form .input-box {
         margin: auto;
         width: 80%;
@@ -143,8 +136,8 @@ RESPONSIVE FIXES
 }
 
 @media (max-width: 480px) {
- 
-    
+
+
     html {
         font-size: 65%;
     }
@@ -173,11 +166,11 @@ RESPONSIVE FIXES
         margin-top: 15px;
     }
 
-    .testimonials, 
-    .download { 
-        background-attachment: inherit !important; 
+    .testimonials,
+    .download {
+        background-attachment: inherit !important;
     }
-    
+
     .download .subscription-form .input-box {
         width: 95%;
         height: 50px;
@@ -190,7 +183,7 @@ RESPONSIVE FIXES
         padding: 11px 20px 11px 20px;
     }
 
-    .features .feature:hover .icon-container .icon, 
+    .features .feature:hover .icon-container .icon,
     footer .contact-button:hover {
         -webkit-background-clip: padding-box;
         -moz-background-clip: padding;
@@ -201,8 +194,8 @@ RESPONSIVE FIXES
 }
 
 @media (max-width: 320px) {
- 
-    
+
+
     html {
         font-size: 60.5%;
     }
@@ -210,7 +203,7 @@ RESPONSIVE FIXES
 
 
 @media (min-width: 320px) and (max-width: 640px) and  (orientation: landscape) {
-        
+
     .full-screen h1 {
         font-size: 30px !important;
         line-height: 40px;
@@ -219,17 +212,17 @@ RESPONSIVE FIXES
     }
     .full-screen .intro-section .intro {
        margin-bottom: 0;
-            
+
     }
-    
+
     .full-screen .intro-section h5 {
-        
+
         font-size: 14px;
     }
-    .full-screen .intro-section .buttons { 
+    .full-screen .intro-section .buttons {
         margin-top: 0;
     }
-    
+
     .full-screen .standard-button {
         font-size: 14px;
         padding: 8px 5px;

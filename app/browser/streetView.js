@@ -12,6 +12,7 @@ function createPanorama(viewElement, map, angle) {
             pitch: 0
         }
     };
+    console.log(panoramaOptions);
     panorama = new google.maps.StreetViewPanorama(viewElement, panoramaOptions);
     map.setStreetView(panorama);
 }
@@ -34,7 +35,7 @@ function initializeViews(res, pointIndex) {
         disableDefaultUI: true,
         minZoom: 14
     };
-
+    console.log(mapOptions);
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var infoWindow = new google.maps.InfoWindow();
     var lat_lng = new Array();
@@ -129,4 +130,5 @@ function initializeViews(res, pointIndex) {
     }
 
     var panorama = createPanorama(document.getElementById('panorama'), map, 150);
+    moveToPoint(markers[0]);
 }

@@ -27,12 +27,14 @@ function moveToPoint(point) {
 
 
 function initializeViews(res, pointIndex) {
+    console.log(res);
     var markers = res["points"];
     var mapOptions = {
         center: new google.maps.LatLng(markers[0].latitude, markers[0].longitude),
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
+        disableDoubleClickZoom: true,
         minZoom: 14
     };
     map = new google.maps.Map(document.getElementById("map"), mapOptions);

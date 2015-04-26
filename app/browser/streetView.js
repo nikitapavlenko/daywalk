@@ -1,5 +1,6 @@
 var map;
 var panorama;
+var pointCurrent;
 
 function createPanorama(viewElement, map, angle) {
     var panoramaOptions = {
@@ -18,6 +19,7 @@ function createPanorama(viewElement, map, angle) {
 }
 
 function moveToPoint(point) {
+    pointCurrent = point;
     var newPoint = new google.maps.LatLng(point.latitude, point.longitude)
     map.setCenter(newPoint);
     panorama.setPosition(newPoint);
@@ -29,6 +31,7 @@ function moveToPoint(point) {
 function initializeViews(res, pointIndex) {
     console.log(res);
     var markers = res["points"];
+    pointCurrent = markers[0];
     var mapOptions = {
         center: new google.maps.LatLng(markers[0].latitude, markers[0].longitude),
         zoom: 15,
@@ -116,12 +119,12 @@ function initializeViews(res, pointIndex) {
             step: function(  ){
                 google.maps.event.trigger(map,'resize');
                 map.setZoom(15);      // This will trigger a zoom_changed on the map
-                map.setCenter(new google.maps.LatLng(markers[0].latitude, markers[0].longitude));
+                map.setCenter(new google.maps.LatLng(pointCurrent.latitude, pointCurrent.longitude));
             },
             complete: function() {
                 google.maps.event.trigger(map,'resize');
                 map.setZoom(15);      // This will trigger a zoom_changed on the map
-                map.setCenter(new google.maps.LatLng(markers[0].latitude, markers[0].longitude));
+                map.setCenter(new google.maps.LatLng(pointCurrent.latitude, pointCurrent.longitude));
                 isResising = false;
             }
         });

@@ -3,7 +3,11 @@ angular.module('daywalk', [
 	'daywalk.resources',
 	'daywalk.browser',
 	'daywalk.home'
-]).
-config(['$routeProvider', function($routeProvider) {
-
+])
+.config(['$routeProvider', '$sceDelegateProvider', function($routeProvider, $sceDelegateProvider) {
+	$sceDelegateProvider.resourceUrlWhitelist([
+    	'self',
+    	'http://nn.radio-t.com/rtfiles/**',
+		'http://youtube.com/**'
+	]);
 }]);

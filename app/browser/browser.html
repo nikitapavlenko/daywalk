@@ -6,7 +6,13 @@
 <div id="point-info" class='dropdown-content'>
     {{title}}<br/>
     {{description}}<br/>
-
+    <audio id="player" ng-src="{{route.points[currentPosition].musicUrl}}"></audio><br/>
+    <button class="btn control-button" onclick="document.getElementById('player').play()">Play</button><br/>
+    <!-- <button class="btn control-button" onclick="document.getElementById('player').pause()">Pause</button><br/> -->
+    <p class="volume-control">
+        <input id="volume-control" type="range" id="test5" min="0" max="1" step="0.1"
+            onchange="document.getElementById('player').volume = document.getElementById('volume-control').value" />
+    </p>
 </div>
 
 <div>

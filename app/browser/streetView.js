@@ -25,28 +25,6 @@ function moveToPoint(point) {
 
 function initializeViews(res, pointIndex) {
     var markers = res["points"];
-    /*var markers = [
-     {
-     "title": 'Alibaug',
-     "lat": '49.989727',
-     "lng": '36.233556',
-     "description": '1'
-     }
-     ,
-     {
-     "title": 'Mumbai',
-     "lat": '49.989786',
-     "lng": '36.23319',
-     "description": '2'
-     }
-     ,
-     {
-     "title": 'Pune',
-     "lat": '49.993149',
-     "lng": '36.233553',
-     "description": '3'
-     }
-     ];*/
     var mapOptions = {
         center: new google.maps.LatLng(markers[0].latitude, markers[0].longitude),
         zoom: 15,

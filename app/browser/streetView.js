@@ -52,7 +52,7 @@ function initializeViews(res, pointIndex) {
         });
         latlngbounds.extend(marker.position);
         (function (marker, data) {
-            
+
         })(marker, data);
     }
     //map.setCenter(latlngbounds.getCenter());

@@ -13,7 +13,7 @@
 }
 
 #sidebar-wrapper {
-    background: #f5f5f5 !important;
+    background: rgba(255, 255, 255, 0.75) !important;
     z-index: 1000;
     position: fixed;
     right: 250px;

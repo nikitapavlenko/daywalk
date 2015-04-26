@@ -62,5 +62,5 @@ resources.factory('Route', function($resource) {
 })
 
 .factory('routesService', ['$resource', function($resource) {
-return $resource('http://daywalk-backend.herokuapp.com/rest/routes/');
+return $resource('http://daywalk-backend.herokuapp.com/rest/routes/:id');
 }]);

@@ -6,7 +6,17 @@
 <div id="point-info" class='dropdown-content'>
     {{title}}<br/>
     {{description}}<br/>
-
+  <!-- Modal Trigger -->
+ <button data-target="video-modal" class="btn modal-trigger">Modal</button>
+</div>
+  <!-- Modal Structure -->
+<div id="video-modal" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>{{route.points[currentPosition].title}}</h4>
+  <div id="video-div">
+    <iframe width="560" height="315" ng-src="{{route.points[currentPosition].videoUrl}}" frameborder="0"allowfullscreen></iframe>
+  </div>
+  </div>
 </div>
 
 <div>
@@ -27,6 +37,11 @@
 <link rel="stylesheet" href="browser.css">
 
 <script>
+     $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+      });
+
     $('.dropdown-button').dropdown({
                 inDuration: 300,
                 outDuration: 225,
@@ -35,4 +50,22 @@
                 belowOrigin: true // Displays dropdown below the button
             }
     );
+$('.modal-trigger').leanModal({
+    ready: function() {
+        toggleVideo();
+    },
+    complete: function(){
+        console.log('Hidden!!!');
+        toggleVideo('hide');
+    }
+});
+function toggleVideo(state) {
+    // if state == 'hide', hide. Else: show video
+    var div = document.getElementById("video-div");
+    var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+    div.style.display = state == 'hide' ? 'none' : '';
+    func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+    iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+    console.log(iframe);
+}
 </script>

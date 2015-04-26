@@ -19,7 +19,7 @@ resources.factory('Route', function($resource) {
 					title: "Title pont 1",
 					info: "info point one",
 					musicUrl: "musicUrl",
-					videoUrl: "https://www.youtube.com/watch?v=48bIZoOQSUI",
+					videoUrl: "https://www.youtube.com/embed/2YCVdB-jFQE",
 				},{
 					id: 1,
 					latitude: "49.989786",
@@ -29,7 +29,7 @@ resources.factory('Route', function($resource) {
 					title: "Title pont 2",
 					info: "info point two",
 					musicUrl: "musicUrl1",
-					videoUrl: "https://www.youtube.com/watch?v=48bIZoOQS2I",
+					videoUrl: "https://www.youtube.com/embed/2YCVdB-jFQE",
 				},{
 					id: 2,
 					latitude: "49.993149",
@@ -39,7 +39,7 @@ resources.factory('Route', function($resource) {
 					title: "Title pont 3",
 					info: "info point three",
 					musicUrl: "musicUrl3",
-					videoUrl: "https://www.youtube.com/watch?v=48bIZoOQSSI",
+					videoUrl: "https://www.youtube.com/embed/2YCVdB-jFQE",
 				}
 			]
   		};

@@ -9,7 +9,7 @@ a[href^="http://maps.google.com/maps"]{display:none !important}
 
 /* Main content */
 #dropdown-button, #point-info {
-    z-index: 100 !important;
+    z-index: 10000 !important;
     position: absolute !important;
     margin-top: 2%;
     margin-right: 2%;
@@ -54,6 +54,7 @@ bottom: 10px;
 
 #video-modal {
     position: absolute;
+    overflow-y:hidden;
 }
 
 .modal-content {

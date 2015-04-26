@@ -35,7 +35,6 @@ function initializeViews(res, pointIndex) {
         disableDefaultUI: true,
         minZoom: 14
     };
-    console.log(mapOptions);
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
     var infoWindow = new google.maps.InfoWindow();
     var lat_lng = new Array();
@@ -51,14 +50,11 @@ function initializeViews(res, pointIndex) {
         });
         latlngbounds.extend(marker.position);
         (function (marker, data) {
-            google.maps.event.addListener(marker, "click", function (e) {
-                infoWindow.setContent(data.description);
-                infoWindow.open(map, marker);
-            });
+            
         })(marker, data);
     }
-    map.setCenter(latlngbounds.getCenter());
-    map.fitBounds(latlngbounds);
+    //map.setCenter(latlngbounds.getCenter());
+    //map.fitBounds(latlngbounds);
 
     //***********ROUTING****************//
 
@@ -76,12 +72,12 @@ function initializeViews(res, pointIndex) {
         if ((i + 1) < lat_lng.length) {
             var src = lat_lng[i];
             var des = lat_lng[i + 1];
-            path.push(src);
+            //path.push(src);
             poly.setPath(path);
             service.route({
                 origin: src,
                 destination: des,
-                travelMode: google.maps.DirectionsTravelMode.DRIVING
+                travelMode: google.maps.DirectionsTravelMode.WALKING
             }, function (result, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     for (var i = 0, len = result.routes[0].overview_path.length; i < len; i++) {

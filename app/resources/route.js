@@ -18,7 +18,7 @@ resources.factory('Route', function($resource) {
 					routeId: 12,
 					sequenceNumber: 1,
 					title: "Title pont 1",
-					info: "info point one",
+					info: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum reprehenderit totam officia, voluptas quidem cupiditate doloremque. Accusamus ducimus laborum laudantium.",
 					musicUrl: "http://nn.radio-t.com/rtfiles/rt_podcast441.mp3",
 					videoUrl: "https://www.youtube.com/embed/2YCVdB-jFQE",
 				},{

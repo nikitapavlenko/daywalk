@@ -2,28 +2,36 @@
 <i class="large mdi-action-list"></i>
 </button>
 <!-- Dropdown Structure -->
-<div id="point-info" class='dropdown-content'>
+<div id="point-info" class='dropdown-content container'>
     <!-- Modal Trigger -->
     <!-- Modal Structure -->
 
+    <h4>{{route.points[currentPosition].title}}</h4>
+    <span>
+    {{route.points[currentPosition].info}}
+    </span>
+
     <audio id="player" ng-src="{{route.points[currentPosition].musicUrl}}"></audio><br/>
-<!--     <button id="play-button" class="btn control-button" onclick="document.getElementById('player').play()">
-        <i class="mdi-av-play-arrow large" ></i>
-    </button><br/>
-    <button id="pause-button" class="btn control-button" onclick="document.getElementById('player').pause()">
-        <i class="mdi-av-pause large" ></i>
-    </button><br/> -->
 
-    <button id="play-controller"class="btn control-button" ng-click="toggleAudio()">
-        <i class="mdi-av-play-arrow large" ng-show="!isPlaying"></i>
-        <i class="mdi-av-pause large" ng-show="isPlaying">puse</i>
-    </button>
 
-    <p class="volume-control">
-        <input id="volume-control" type="range" id="test5" min="0" max="1" step="0.1"
-        onchange="document.getElementById('player').volume = document.getElementById('volume-control').value" />
-    </p>
-    <button data-target="video-modal" class="btn modal-trigger">Video</button>
+    <div class="volume-control">
+        <div class="row">
+           <div class="col-xs-2">
+                <button id="play-controller" class="btn" ng-click="toggleAudio()">
+                    <i class="mdi-av-play-arrow small" ng-show="!isPlaying"></i>
+                    <i class="mdi-av-pause small" ng-show="isPlaying"></i>
+                </button>
+            </div>
+            <div class="col-xs-2">
+                <i class="mdi-av-volume-up small"></i>
+            </div>
+            <div class="col-xs-4">
+                <input id="volume-control" type="range" id="test5" min="0" max="1" step="0.1"
+                onchange="document.getElementById('player').volume = document.getElementById('volume-control').value" />
+            </div>
+        </div>
+    </div>
+    <button id="video-button" data-target="video-modal" class="btn modal-trigger">Watch video</button>
 </div>
 
     <div id="video-modal" class="modal modal-fixed-footer">

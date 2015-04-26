@@ -19,6 +19,8 @@ a[href^="http://maps.google.com/maps"]{display:none !important}
 #point-info {
     height: 80%;
     width: 300px;
+    word-wrap: break-word;
+      white-space: normal !important;
 }
 
 .control-button {
@@ -58,10 +60,8 @@ bottom: 10px;
     overflow-y: hidden !important;
 }
 
-#play-button {
-    right: 45%;
-}
-
-#pause-button {
-    right: 55%;
+#video-button{
+    bottom: 10px !important;
+    position: absolute;
+    left: 10px;
 }

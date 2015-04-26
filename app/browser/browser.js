@@ -53,13 +53,6 @@ angular.module('daywalk.browser', ['ngRoute'])
         $scope.currentPosition = 0;
 
         var res = route.get({id:3}, function(){
-            initializeViews(res);
-            $scope.route = res;
-
-            for (var i = 0; i < $scope.route.points.length; i++) {
-                $scope.route.points[i].videoUrl += '?enablejsapi=1';
-            }
-
             res.points = res.points.sort(function(point1, point2) {
                 if (point1.sequenceNumber < point2.sequenceNumber) {
                     return -1;
@@ -69,6 +62,13 @@ angular.module('daywalk.browser', ['ngRoute'])
                 }
                 return 0
             });
+
+            initializeViews(res);
+            $scope.route = res;
+
+            for (var i = 0; i < $scope.route.points.length; i++) {
+                $scope.route.points[i].videoUrl += '?enablejsapi=1';
+            }
         });
 
         $scope.next = function() {

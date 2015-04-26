@@ -9,7 +9,7 @@ function createPanorama(viewElement, map, angle) {
         clickToGo: false,
         pov: {
             heading: angle,
-            pitch: 10
+            pitch: 0
         }
     };
     panorama = new google.maps.StreetViewPanorama(viewElement, panoramaOptions);
@@ -20,6 +20,8 @@ function moveToPoint(point) {
     var newPoint = new google.maps.LatLng(point.latitude, point.longitude)
     map.setCenter(newPoint);
     panorama.setPosition(newPoint);
+    panorama.setPov({heading: point.angle,
+            pitch: 0});
 }
 
 

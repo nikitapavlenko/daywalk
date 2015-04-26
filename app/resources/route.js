@@ -12,9 +12,9 @@ resources.factory('Route', function($resource) {
 			points: [
 				{
 					id: 0,
-					latitude: "49.989727",
-					longitude: "36.233556",
-					angle: 30.4,
+					latitude: "50.000943",
+					longitude: "36.234657",
+					angle: 278.3,
 					routeId: 12,
 					sequenceNumber: 1,
 					title: "Title pont 1",

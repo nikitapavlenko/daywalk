@@ -64,5 +64,24 @@ bottom: 10px;
 #video-button{
     bottom: 10px !important;
     position: absolute;
-    left: 10px;
+    left: 27%;
+}
+
+#status {
+    position: relative;
+    text-align: center;
+    vertical-align: center;
+    color: black;
+}
+
+.centered
+{
+    position: absolute !important;
+    z-index: 2000 !important;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    bottom: 55px;
+    color: rgba(255,255,255,0.8);
 }

@@ -19,8 +19,8 @@ resources.factory('Route', function($resource) {
 					sequenceNumber: 2,
 					title: "Летящая Украина",
 					info: "памятник, установленный в Харькове на площади Конституции в честь провозглашения Независимости Украины 24 августа 1991 года. Был торжественно открыт 22 августа 2012 года накануне 21-й годовщины Независимости государства и Дня города (в Харькове отмечается 23 августа).",
-					musicUrl: "musicUrl1",
-					videoUrl: "https://www.youtube.com/watch?v=48bIZoOQS2I",
+					musicUrl: "music/shopping-square-1.mp3",
+					videoUrl: "https://www.youtube.com/watch?v=48bIZoOQS2I"
 				},{
 					id: 1,
 					latitude: "49.998811",
@@ -30,8 +30,8 @@ resources.factory('Route', function($resource) {
 					sequenceNumber: 3,
 					title: "ХНАТОБ",
 					info: "Харьковский национальный академический театр оперы и балета имени Н.В. Лысенко (ХНАТОБ) — первый украинский стационарный оперный театр. Ставит спектакли на украинском, русском, французском и итальянском языках.",
-					musicUrl: "musicUrl3",
-					videoUrl: "https://www.youtube.com/embed/BqjaNVrv7H4",
+					musicUrl: "music/shopping-square-1.mp3",
+					videoUrl: "https://www.youtube.com/embed/BqjaNVrv7H4"
 				},{
 					id: 2,
 					latitude: "50.000943",
@@ -41,8 +41,8 @@ resources.factory('Route', function($resource) {
 					sequenceNumber: 1,
 					title: "Памятник Тарасу Григорьевичу Шевченко",
 					info: "Памятник украинскому поэту, писателю, художнику и мыслителю Тарасу Григорьевичу Шевченко. Монумент был торжественно открыт 24 марта 1935 года, то есть через 9 месяцев после того, как Харьков перестал быть столицей УССР.",
-					musicUrl: "http://nn.radio-t.com/rtfiles/rt_podcast441.mp3",
-					videoUrl: "",
+					musicUrl: "music/street-traffic-2.mp3",
+					videoUrl: ""
 				},{
 					id: 3,
 					latitude: "50.004295",
@@ -52,8 +52,8 @@ resources.factory('Route', function($resource) {
 					sequenceNumber: 1,
 					title: "Площадь Свободы",
 					info: "Пло?щадь Свободы (укр. Площа Свободи) — центральная площадь Харькова,  шестая по величине площадь в Европе и двенадцатая в мире. ",
-					musicUrl: "http://nn.radio-t.com/rtfiles/rt_podcast441.mp3",
-					videoUrl: "https://www.youtube.com/embed/fazoIhhCcGw",
+					musicUrl: "music/street-traffic-1.mp3",
+					videoUrl: "https://www.youtube.com/embed/fazoIhhCcGw"
 				}
 			]
   		};

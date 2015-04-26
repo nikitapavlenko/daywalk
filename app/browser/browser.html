@@ -42,7 +42,7 @@
             <h4>{{route.points[currentPosition].title}}</h4>
             <span>{{route.points[currentPosition].info}}</span>
 
-            <audio id="player" ng-src="{{route.points[currentPosition].musicUrl}}"></audio>
+            <audio id="player" ng-src="{{route.points[currentPosition].musicUrl}}" autoplay></audio>
             <br/>
 
             <div class="volume-control">
@@ -101,7 +101,7 @@
         console.log(iframe);
     }
 </script>
-        
+
 <script>
     function sideInfo() {
         $("#wrapper").toggleClass("toggled");
